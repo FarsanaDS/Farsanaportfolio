@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Farsana Thasnem PA | Data Scientist Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body, html {
       margin: 0;
@@ -31,6 +31,13 @@
       text-align: center;
       animation: fadeIn 2s ease-in-out;
     }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #4F46E5;
+      margin-bottom: 20px;
+    }
     h1 {
       font-size: 2.5rem;
       color: #4F46E5;
@@ -43,7 +50,20 @@
       color: #06B6D4;
       text-decoration: none;
     }
-    .skills, .projects {
+    .skills .skill {
+      margin-bottom: 15px;
+    }
+    .skills .bar {
+      background: #1E293B;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .skills .bar span {
+      display: block;
+      height: 10px;
+      background: #4F46E5;
+    }
+    .projects {
       display: grid;
       gap: 20px;
       animation: slideIn 1.5s ease-in-out;
@@ -61,6 +81,23 @@
     .contact {
       text-align: center;
       animation: fadeInUp 2s ease-in-out;
+    }
+    .contact i {
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+    .contact p {
+      margin: 10px 0;
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #06B6D4;
+      color: #0F172A;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
     }
     footer {
       text-align: center;
@@ -87,55 +124,55 @@
 <body>
   <div id="particles-js"></div>
   <header>
+    <img src="your-photo.jpg" alt="Farsana Thasnem" class="profile-img">
     <h1>Farsana Thasnem PA</h1>
     <p>Aspiring Data Scientist | Physics Graduate | Machine Learning Enthusiast</p>
-  </header>
-
-  <section>
+  </header>  <section>
     <h2>Skills</h2>
     <div class="skills">
-      <p>Python, Pandas, NumPy, Scikit-learn, SQL, Matplotlib, Seaborn,<br> Power BI, Tableau, Excel, Web Scraping, Streamlit, Machine Learning, Data Visualization, R</p>
+      <div class="skill">Python <div class="bar"><span style="width: 90%"></span></div></div>
+      <div class="skill">Pandas / NumPy <div class="bar"><span style="width: 85%"></span></div></div>
+      <div class="skill">Scikit-learn / Machine Learning <div class="bar"><span style="width: 80%"></span></div></div>
+      <div class="skill">SQL <div class="bar"><span style="width: 75%"></span></div></div>
+      <div class="skill">Power BI / Tableau <div class="bar"><span style="width: 70%"></span></div></div>
+      <div class="skill">Web Scraping / Streamlit <div class="bar"><span style="width: 65%"></span></div></div>
     </div>
-  </section>
-
-  <section>
+  </section>  <section>
     <h2>Projects</h2>
     <div class="projects">
       <div class="project">
         <h3>Income Prediction Model (Deployed)</h3>
-        <p>Built a classification model using the Adult Income dataset (32K+ records). Optimized with grid search and cross-validation for high accuracy. Created insightful visualizations and deployed using Streamlit.</p>
-        <p><strong>Tools:</strong> Python, Scikit-learn, Pandas, Matplotlib, Streamlit</p>
+        <p>Built a classification model using the Adult Income dataset. Optimized using grid search and deployed with Streamlit.</p>
+        <p><strong>Tools:</strong> Python, Scikit-learn, Pandas, Streamlit</p>
+        <a href="#" class="resume-btn">View More</a>
       </div>
       <div class="project">
-        <h3>Brazilian E-commerce EDA & Dashboard</h3>
-        <p>Performed EDA on Brazilian E-commerce dataset for behavioral and satisfaction analysis. Built an interactive Streamlit dashboard and conducted RFM analysis for segmentation.</p>
-        <p><strong>Tools:</strong> Python (Pandas, NumPy, Matplotlib, Seaborn, Plotly), Streamlit, Jupyter Notebook</p>
+        <h3>Brazilian E-commerce Dashboard</h3>
+        <p>EDA and RFM analysis with a Streamlit dashboard on customer behavior.</p>
+        <p><strong>Tools:</strong> Python, Plotly, Streamlit</p>
+        <a href="#" class="resume-btn">View More</a>
       </div>
       <div class="project">
-        <h3>Data Science Salaries Dashboard (Tableau)</h3>
-        <p>Analyzed salary data by experience, company size, and job title using Tableau. Created a public dashboard using Tableau Public and GitHub.</p>
-        <p><strong>Tools:</strong> Tableau, GitHub</p>
+        <h3>Data Science Salaries (Tableau)</h3>
+        <p>Analyzed salary trends by company size, job title, and experience.</p>
+        <a href="#" class="resume-btn">View More</a>
       </div>
       <div class="project">
         <h3>Prime Video Dashboard (Power BI)</h3>
-        <p>Built a Power BI dashboard to visualize ratings, genres, countries, and time trends of Prime Video data. Learned dashboard structuring, custom visuals, and storyboarding.</p>
-        <p><strong>Tools:</strong> Power BI, Dataset from YouTube Tutorial</p>
+        <p>Visualized movie data across countries and genres in Power BI.</p>
+        <a href="#" class="resume-btn">View More</a>
       </div>
     </div>
-  </section>
-
-  <section class="contact">
+    <a href="your-resume.pdf" class="resume-btn" download>Download Resume</a>
+  </section>  <section class="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:farsanathesni02@gmail.com">farsanathesni02@gmail.com</a></p>
-    <p>Phone: 7994145436</p>
-    <p><a href="https://www.linkedin.com/in/farsana-thasnem-pa" target="_blank">LinkedIn</a> | <a href="https://github.com/FarsanaDS" target="_blank">GitHub</a></p>
-  </section>
-
-  <footer>
+    <p><i class="fas fa-envelope"></i><a href="mailto:farsanathesni02@gmail.com">farsanathesni02@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> 7994145436</p>
+    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/farsana-thasnem-pa" target="_blank">LinkedIn</a></p>
+    <p><i class="fab fa-github"></i> <a href="https://github.com/FarsanaDS" target="_blank">GitHub</a></p>
+  </section>  <footer>
     &copy; 2025 Farsana Thasnem PA. All rights reserved.
-  </footer>
-
-  <script>
+  </footer>  <script>
     particlesJS("particles-js", {
       particles: {
         number: { value: 80 },
@@ -165,6 +202,5 @@
       },
       retina_detect: true
     });
-  </script>
-</body>
+  </script></body>
 </html>
