@@ -1,210 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Farsana Thasnem | Data Scientist Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0F172A;
-      color: #F8FAFC;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #333;
       scroll-behavior: smooth;
     }
-    nav {
-      background-color: #1E293B;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    /* Navbar */
+    .navbar {
+      background-color: #1a2a2a;
+      padding: 15px 20px;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
+    .navbar-brand, .nav-link {
+      color: #fff !important;
     }
-    nav ul li a {
-      color: #F8FAFC;
-      text-decoration: none;
+    .nav-link:hover {
+      color: #00d2b2 !important;
     }
-    .section {
-      padding: 60px 40px;
-      border-bottom: 1px solid #1E293B;
+    .navbar .btn-primary {
+      background-color: #00d2b2;
+      border-color: #00d2b2;
     }
+    /* Hero */
     .hero {
+      height: 100vh;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      background-color: #fff;
     }
-    .hero img {
-      width: 300px;
+    .hero h1 {
+      font-size: 4rem;
+      color: #333;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      color: #00d2b2;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .hero .btn-primary {
+      background-color: #00d2b2;
+      border-color: #00d2b2;
+    }
+    /* Sections */
+    .section {
+      padding: 80px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .section h2 span {
+      color: #00d2b2;
+    }
+    /* About */
+    .about img {
+      max-width: 100%;
+      border-radius: 50%;
+    }
+    /* Services */
+    .services .card {
+      border: none;
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px;
       border-radius: 10px;
     }
-    .skills-bar {
-      margin-bottom: 15px;
-    }
-    .skills-bar span {
-      display: block;
-      margin-bottom: 5px;
-    }
-    .bar {
-      height: 10px;
-      background-color: #334155;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      background-color: #4F46E5;
-    }
-    .tools span, .contact-info span {
-      display: inline-block;
-      margin: 5px 10px;
-      padding: 5px 10px;
-      background-color: #1E293B;
-      border-radius: 5px;
-    }
+    /* Projects */
     .projects {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .project-card {
-      background-color: #1E293B;
-      padding: 15px;
+      background-color: #f8f9fa;
       border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
     }
-    .contact {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .project-card:hover {
+      transform: scale(1.05);
     }
-    .contact-form input, .contact-form textarea {
-      display: block;
+    .project-card img {
       width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
+      height: 200px;
+      object-fit: cover;
     }
-    .contact-form button {
-      padding: 10px 20px;
-      background-color: #4F46E5;
+    .project-card .card-body {
+      padding: 15px;
+    }
+    .project-card .btn-primary {
+      background-color: #00d2b2;
+      border-color: #00d2b2;
+    }
+    /* Contact */
+    .contact-form .form-control {
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    .contact-form .btn-primary {
+      background-color: #00d2b2;
+      border-color: #00d2b2;
+    }
+    .contact-info i {
+      color: #00d2b2;
+      margin-right: 10px;
+    }
+    /* Footer */
+    footer {
+      background-color: #1a2a2a;
       color: #fff;
-      border: none;
-      border-radius: 5px;
+      text-align: center;
+      padding: 20px;
     }
-    .resume {
-      margin-top: 20px;
+    footer a {
+      color: #00d2b2;
+      margin: 0 10px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
-
 <body>
-  <nav>
-    <div><strong>Farsana</strong></div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Farsana Thasnem</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary" href="farsana_thasnem_resume.pdf">Download Resume</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
+  <!-- Hero -->
   <section id="home" class="section hero">
     <div>
-      <h1>Hello, my name is <br><span style="color:#4F46E5; font-size:2rem;">Farsana Thasnem</span></h1>
+      <h1>Farsana Thasnem PA</h1>
       <h2>Data Scientist & AI Specialist</h2>
       <p>Aspiring data scientist with a strong foundation in physics and expertise in machine learning and data analysis. Proficient in Python, SQL, and visualization tools with hands-on experience in predictive modeling and statistical analysis.</p>
-      <div class="resume">
-        <a href="farsana_thasnem_resume.pdf" style="color:#fff; background-color:#4F46E5; padding:10px 20px; border-radius:5px; text-decoration:none;">Download Resume</a>
+      <a href="farsana_thasnem_resume.pdf" class="btn btn-primary">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>About <span>Me</span></h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="rrrr.jpg" alt="Your Name" class="img-fluid">
+        </div>
+        <div class="col-md-8">
+          <p>Aspiring data scientist with a strong foundation in physics and expertise in machine learning and data analysis. Proficient in Python, SQL, and visualization tools with hands-on experience in predictive modeling and statistical analysis.</p>
+          <ul class="list-unstyled">
+            <li><strong>Name:</strong> Farsana Thasnem PA</li>
+            <li><strong>Email:</strong> farsanathesni02@gmail.com</li>
+            <li><strong>Phone:</strong> +91 7994145436</li>
+            <li><strong>Location:</strong> Tirur, Kerala, India</li>
+          </ul>
+          <h3>Education & Certifications</h3>
+          <ul class="list-unstyled">
+            <li>Data Science - Techolas Technologies, Calicut, Kerala (2024 – Present)</li>
+            <li>BSc in Physics - University of Calicut (2021 – 2024)</li>
+            <li>TensorFlow Developer Certificate - Google (2025)</li>
+            <li>TensorFlow Developer Certificate - IBM (2025)</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <img src="rrrr.jpg" alt="Farsana Thasnem">
   </section>
 
-  <section id="skills" class="section">
-    <h2>My Expertise<br><span style="color:#4F46E5">Technical Skills</span></h2>
-    <div>
-      <h3>Core Competencies</h3>
-      <div class="skills-bar"><span>Machine Learning - 95%</span><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
-      <div class="skills-bar"><span>Python - 90%</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
-      <div class="skills-bar"><span>Data Visualization - 85%</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
-      <div class="skills-bar"><span>Deep Learning - 88%</span><div class="bar"><div class="bar-fill" style="width:88%"></div></div></div>
-      <div class="skills-bar"><span>Statistical Analysis - 92%</span><div class="bar"><div class="bar-fill" style="width:92%"></div></div></div>
-      <div class="skills-bar"><span>SQL - 80%</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
-      <div class="skills-bar"><span>TensorFlow - 85%</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
-      <div class="skills-bar"><span>PyTorch - 83%</span><div class="bar"><div class="bar-fill" style="width:83%"></div></div></div>
+  <!-- Services -->
+  <section id="services" class="section services">
+    <div class="container">
+      <h2>My <span>Services</span></h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <h3>Machine Learning</h3>
+            <p>Building predictive models using TensorFlow, PyTorch, and Scikit-learn.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <h3>Data Analysis</h3>
+            <p>Extracting insights with Python, Pandas, and SQL.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <h3>Data Visualization</h3>
+            <p>Creating dashboards with Tableau, Power BI, and Matplotlib.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <h3>Technologies & Tools</h3>
-    <div class="tools">
-      <span>Python</span><span>R</span><span>SQL</span><span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Tableau</span><span>Power BI</span><span>Docker</span><span>Git</span><span>Flask</span><span>FastAPI</span><span>Spark</span><span>Hadoop</span><span>Keras</span><span>NLTK</span><span>OpenCV</span><span>Plotly</span>
-    </div>
-    <h3>Education & Certifications</h3>
-    <ul>
-      <li>Data Science - Techolas Technologies, Calicut, Kerala (2024 – Present)</li>
-      <li>BSc in Physics - University of Calicut (2021 – 2024)</li>
-      <li>TensorFlow Developer Certificate - Google (2025)</li>
-      <li>TensorFlow Developer Certificate - IBM (2025)</li>
-    </ul>
   </section>
 
+  <!-- Projects -->
   <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h4>Income Prediction</h4>
-        <p>Used ML on census data to predict income &gt; $50K/year.</p>
-        <a href="https://github.com/FarsanaDS/Adult-income-ml">GitHub</a>
+    <div class="container">
+      <h2>My <span>Projects</span></h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="path/to/project1.jpg" alt="Income Prediction">
+          <div class="card-body">
+            <h4>Income Prediction</h4>
+            <p>Used ML on census data to predict income > $50K/year.</p>
+            <a href="https://github.com/FarsanaDS/Adult-income-ml" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="path/to/project2.jpg" alt="Sales Dashboard">
+          <div class="card-body">
+            <h4>Sales Dashboard</h4>
+            <p>Built Power BI dashboard for sales insights.</p>
+            <a href="https://github.com/FarsanaDS/Global-superstore-sales-dashboard" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="path/to/project3.jpg" alt="Exploratory Data Analysis">
+          <div class="card-body">
+            <h4>Exploratory Data Analysis</h4>
+            <p>EDA for Brazilian E-Commerce dataset.</p>
+            <a href="https://github.com/FarsanaDS/Brazilian-ecommerce-data" class="btn btn-primary">View Project</a>
+          </div>
+        </div>
       </div>
-      <div class="project-card">
-        <h4>Sales Dashboard</h4>
-        <p>Built Power BI dashboard for sales insights.</p>
-        <a href="https://github.com/FarsanaDS/Global-superstore-sales-dashboard">GitHub</a>
+      <div class="text-center mt-4">
+        <a href="https://github.com/FarsanaDS" class="btn btn-primary">View All Projects</a>
       </div>
-      <div class="project-card">
-        <h4>Exploratory Data Analysis</h4>
-        <p>EDA for Brazilian E-Commerce dataset.</p>
-        <a href="https://github.com/FarsanaDS/Brazilian-ecommerce-data">GitHub</a>
-      </div>
-      <div class="project-card">
-        <h4>DS salary dashboard</h4>
-        <p>Tableau dashboard analyzing salaries in data science-related jobs.</p>
-        <a href="https://github.com/FarsanaDS/Data-Science-Salary-Dashboard">GitHub</a>
-      </div>
-    </div>
-    <div style="margin-top:20px;">
-      <a href="https://github.com/FarsanaDS" style="color:#fff; background-color:#4F46E5; padding:10px 20px; border-radius:5px; text-decoration:none;">View All Projects</a>
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact" class="section">
-    <h2>Get in Touch</h2>
-    <div class="contact">
-      <div>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:farsanathesni02@gmail.com">farsanathesni02@gmail.com</a></p>
-        <p><i class="fas fa-phone"></i> +91 7994145436</p>
-        <p><i class="fab fa-linkedin"></i> <a href="www.linkedin.com/in/farsana-thasnem-pa">linkedin.com/in/farsana-thasnem-pa</a></p>
-        <p><i class="fab fa-github"></i> <a href="https://github.com/FarsanaDS">github.com/FarsanaDS</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Tirur, Kerala, India</p>
-      </div>
-      <div class="contact-form">
-        <form action="https://forms.gle/jQwbub2PprM3AawW8" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="subject" placeholder="Subject" required />
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
+    <div class="container">
+      <h2>Get in <span>Touch</span></h2>
+      <div class="row">
+        <div class="col-md-6 contact-info">
+          <p><i class="fas fa-envelope"></i> <a href="mailto:farsanathesni02@gmail.com">farsanathesni02@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> +91 7994145436</p>
+          <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/farsana-thasnem-pa">linkedin.com/in/farsana-thasnem-pa</a></p>
+          <p><i class="fab fa-github"></i> <a href="https://github.com/FarsanaDS">github.com/your-username</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Tirur, Kerala, India</p>
+        </div>
+        <div class="col-md-6 contact-form">
+          <form action="https://formspree.io/f/your-endpoint" method="POST">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+            <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Your Name. All Rights Reserved.</p>
+    <div>
+      <a href="https://linkedin.com/in/farsana-thasnem-pa"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/FarsanaDS"><i class="fab fa-github fa-2x"></i></a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
