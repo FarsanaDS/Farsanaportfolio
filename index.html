@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farsana Thasnem PA | Data Scientist Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0F172A;
+      color: #F8FAFC;
+      scroll-behavior: smooth;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #0F172A;
+    }
+    header, section, footer {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+    header {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #4F46E5;
+    }
+    h2 {
+      color: #06B6D4;
+      margin-top: 40px;
+    }
+    a {
+      color: #06B6D4;
+      text-decoration: none;
+    }
+    .skills, .projects {
+      display: grid;
+      gap: 20px;
+      animation: slideIn 1.5s ease-in-out;
+    }
+    .project {
+      background-color: #1E293B;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .contact {
+      text-align: center;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #94A3B8;
+      padding-bottom: 20px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
+    }
+    @keyframes slideIn {
+      from {transform: translateY(20px); opacity: 0;} to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {transform: translateY(40px); opacity: 0;} to {transform: translateY(0); opacity: 1;}
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      section, header { padding: 40px 15px; }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <h1>Farsana Thasnem PA</h1>
+    <p>Aspiring Data Scientist | Physics Graduate | Machine Learning Enthusiast</p>
+  </header>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <p>Python, Pandas, NumPy, Scikit-learn, SQL, Matplotlib, Seaborn,<br> Power BI, Tableau, Excel, Web Scraping, Streamlit, Machine Learning, Data Visualization, R</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Income Prediction Model (Deployed)</h3>
+        <p>Built a classification model using the Adult Income dataset (32K+ records). Optimized with grid search and cross-validation for high accuracy. Created insightful visualizations and deployed using Streamlit.</p>
+        <p><strong>Tools:</strong> Python, Scikit-learn, Pandas, Matplotlib, Streamlit</p>
+      </div>
+      <div class="project">
+        <h3>Brazilian E-commerce EDA & Dashboard</h3>
+        <p>Performed EDA on Brazilian E-commerce dataset for behavioral and satisfaction analysis. Built an interactive Streamlit dashboard and conducted RFM analysis for segmentation.</p>
+        <p><strong>Tools:</strong> Python (Pandas, NumPy, Matplotlib, Seaborn, Plotly), Streamlit, Jupyter Notebook</p>
+      </div>
+      <div class="project">
+        <h3>Data Science Salaries Dashboard (Tableau)</h3>
+        <p>Analyzed salary data by experience, company size, and job title using Tableau. Created a public dashboard using Tableau Public and GitHub.</p>
+        <p><strong>Tools:</strong> Tableau, GitHub</p>
+      </div>
+      <div class="project">
+        <h3>Prime Video Dashboard (Power BI)</h3>
+        <p>Built a Power BI dashboard to visualize ratings, genres, countries, and time trends of Prime Video data. Learned dashboard structuring, custom visuals, and storyboarding.</p>
+        <p><strong>Tools:</strong> Power BI, Dataset from YouTube Tutorial</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:farsanathesni02@gmail.com">farsanathesni02@gmail.com</a></p>
+    <p>Phone: 7994145436</p>
+    <p><a href="https://www.linkedin.com/in/farsana-thasnem-pa" target="_blank">LinkedIn</a> | <a href="https://github.com/FarsanaDS" target="_blank">GitHub</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Farsana Thasnem PA. All rights reserved.
+  </footer>
+
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#4F46E5" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#06B6D4",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
