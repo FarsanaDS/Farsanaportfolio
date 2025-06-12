@@ -76,7 +76,36 @@
     /* About */
     .about img {
       max-width: 100%;
-      border-radius: 0;
+      border-radius: 5%;
+    }
+    /* Skills */
+    .skills-bar {
+      margin-bottom: 15px;
+    }
+    .skills-bar span {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    .bar {
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background-color: #00d2b2;
+      transition: width 0.5s ease-in-out;
+    }
+    .tools span {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      color: #333;
     }
     /* Services */
     .services .card {
@@ -148,6 +177,12 @@
       .hero h2 {
         font-size: 1.5rem;
       }
+      .skills-bar, .tools {
+        text-align: center;
+      }
+      .tools span {
+        margin: 5px 3px;
+      }
     }
   </style>
 </head>
@@ -163,10 +198,10 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-         <!-- <li class="nav-item"><a class="nav-link btn btn-primary" href="farsana_thasnem_resume.pdf">Download Resume</a></li>-->
+          <li class="nav-item"><a class="nav-link btn btn-primary" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -178,7 +213,7 @@
       <h1>Farsana Thasnem PA</h1>
       <h2>Data Scientist & AI Specialist</h2>
       <p>Aspiring data scientist with a strong foundation in physics and expertise in machine learning and data analysis. Proficient in Python, SQL, and visualization tools with hands-on experience in predictive modeling and statistical analysis.</p>
-      <a href="farsana_thasnem_resume.pdf" class="btn btn-primary">Download Resume</a>
+      <a href="farsana_thasnem_resume.pdf" class="btn btn-primary">Download CV</a>
     </div>
   </section>
 
@@ -198,6 +233,32 @@
             <li><strong>Phone:</strong> +91 7994145436</li>
             <li><strong>Location:</strong> Tirur, Kerala, India</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>My <span>Expertise</span></h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Core Competencies</h3>
+          <div class="skills-bar"><span>Machine Learning - 95%</span><div class="bar"><div class="bar-fill" style="width:95%"></div></div></div>
+          <div class="skills-bar"><span>Python - 90%</span><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+          <div class="skills-bar"><span>Data Visualization - 85%</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+          <div class="skills-bar"><span>Deep Learning - 88%</span><div class="bar"><div class="bar-fill" style="width:88%"></div></div></div>
+          <div class="skills-bar"><span>Statistical Analysis - 92%</span><div class="bar"><div class="bar-fill" style="width:92%"></div></div></div>
+          <div class="skills-bar"><span>SQL - 80%</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+          <div class="skills-bar"><span>TensorFlow - 85%</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+          <div class="skills-bar"><span>PyTorch - 83%</span><div class="bar"><div class="bar-fill" style="width:83%"></div></div></div>
+        </div>
+        <div class="col-md-6">
+          <h3>Technologies & Tools</h3>
+          <div class="tools">
+            <span>Python</span><span>R</span><span>SQL</span><span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Tableau</span><span>Power BI</span><span>Docker</span><span>Git</span><span>Flask</span><span>FastAPI</span><span>Spark</span><span>Hadoop</span><span>Keras</span><span>NLTK</span><span>OpenCV</span><span>Plotly</span>
+          </div>
           <h3>Education & Certifications</h3>
           <ul class="list-unstyled">
             <li>Data Science - Techolas Technologies, Calicut, Kerala (2024 – Present)</li>
@@ -243,7 +304,7 @@
       <h2>My <span>Projects</span></h2>
       <div class="projects">
         <div class="project-card">
-          <img src="path/to/project1.jpg" alt="Income Prediction">
+          <img src="incomepred.png" alt="Income Prediction">
           <div class="card-body">
             <h4>Income Prediction</h4>
             <p>Used ML on census data to predict income > $50K/year.</p>
@@ -251,7 +312,7 @@
           </div>
         </div>
         <div class="project-card">
-          <img src="path/to/project2.jpg" alt="Sales Dashboard">
+          <img src="salesdash.png" alt="Sales Dashboard">
           <div class="card-body">
             <h4>Sales Dashboard</h4>
             <p>Built Power BI dashboard for sales insights.</p>
@@ -259,7 +320,7 @@
           </div>
         </div>
         <div class="project-card">
-          <img src="path/to/project3.jpg" alt="Exploratory Data Analysis">
+          <img src="ecom.png" alt="Exploratory Data Analysis">
           <div class="card-body">
             <h4>Exploratory Data Analysis</h4>
             <p>EDA for Brazilian E-Commerce dataset.</p>
@@ -281,9 +342,9 @@
         <div class="col-md-6 contact-info">
           <p><i class="fas fa-envelope"></i> <a href="mailto:farsanathesni02@gmail.com">farsanathesni02@gmail.com</a></p>
           <p><i class="fas fa-phone"></i> +91 7994145436</p>
-          <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/farsana-thasnem-pa">linkedin.com/in/farsana-thasnem-pa</a></p>
-          <p><i class="fab fa-github"></i> <a href="https://github.com/FarsanaDS">github.com/FarsanaDS</a></p>
-          <p><i class="fas fa-map-marker-alt"></i> Tirur, Kerala, India</p>
+          <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/your-profile">linkedin.com/in/farsana-thasnem-pa</a></p>
+          <p><i class="fab fa-github"></i> <a href="https://github.com/your-username">github.com/FarsanaDS</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Your Tirur, Kerala, India</p>
         </div>
         <div class="col-md-6 contact-form">
           <form action="https://formspree.io/f/your-endpoint" method="POST">
