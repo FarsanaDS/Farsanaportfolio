@@ -69,7 +69,7 @@
     .section {
       padding: 80px 20px;
       border-bottom: 1px solid #e0e0e0;
-      opacity: 0; /* Hidden by default for animation */
+      opacity: 0;
     }
     .section.visible {
       animation: fadeInUp 0.8s ease-out forwards;
@@ -86,6 +86,9 @@
     .about img {
       max-width: 100%;
       border-radius: 5%;
+    }
+    .about .btn-container {
+      margin-top: 20px;
     }
     /* Skills */
     .skills-bar {
@@ -105,8 +108,8 @@
     .bar-fill {
       height: 100%;
       background-color: #00d2b2;
-      width: 0; /* Start at 0% for animation */
-      transition: width 1.5s ease-in-out; /* Animate width */
+      width: 0;
+      transition: width 1.5s ease-in-out;
     }
     .tools span {
       display: inline-block;
@@ -116,6 +119,52 @@
       border-radius: 5px;
       font-size: 0.9rem;
       color: #333;
+    }
+    /* Education & Certifications Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      height: 0;
+      width: 2px;
+      background-color: #00d2b2;
+      transition: height 1.5s ease-in-out;
+    }
+    .timeline.visible::before {
+      height: 100%;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      width: 12px;
+      height: 12px;
+      background-color: #00d2b2;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #00d2b2;
+    }
+    .timeline-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0;
     }
     /* Services */
     .services .row {
@@ -322,6 +371,9 @@
             <li><strong>Phone:</strong> +91 7994145436</li>
             <li><strong>Location:</strong> Tirur, Kerala, India</li>
           </ul>
+          <div class="btn-container">
+            <a href="#skills" class="btn btn-primary">View my skills</a>
+          </div>
         </div>
       </div>
     </div>
@@ -349,12 +401,32 @@
             <span>Python</span><span>R</span><span>SQL</span><span>TensorFlow</span><span>PyTorch</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Tableau</span><span>Power BI</span><span>Docker</span><span>Git</span><span>Flask</span><span>FastAPI</span><span>Spark</span><span>Hadoop</span><span>Keras</span><span>NLTK</span><span>OpenCV</span><span>Plotly</span>
           </div>
           <h3><br>Education & Certifications</h3>
-          <ul class="list-unstyled">
-            <li>Data Science - Techolas Technologies, Calicut, Kerala (2024 – Present)</li>
-            <li>BSc in Physics - University of Calicut (2021 – 2024)</li>
-            <li>TensorFlow Developer Certificate - Google (2025)</li>
-            <li>TensorFlow Developer Certificate - IBM (2025)</li>
-          </ul>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div>
+                <h4>Data Science</h4>
+                <p>Techolas Technologies, Calicut, Kerala (2024 – Present)</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h4>BSc in Physics</h4>
+                <p>University of Calicut (2021 – 2024)</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h4>TensorFlow Developer Certificate</h4>
+                <p>Google (2025)</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div>
+                <h4>TensorFlow Developer Certificate</h4>
+                <p>IBM (2025)</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -452,6 +524,7 @@
     <div>
       <a href="https://linkedin.com/in/farsana-thasnem-pa"><i class="fab fa-linkedin fa-2x"></i></a>
       <a href="https://github.com/FarsanaDS"><i class="fab fa-github fa-2x"></i></a>
+      <a href="mailto:farsanathesni02@gmail.com"><i class="fab fa-envelope fa-2x"></i></a>
     </div>
   </footer>
 
@@ -487,13 +560,19 @@
     // Skills Progress Bar Animation
     const skillsSection = document.querySelector('#skills');
     const bars = document.querySelectorAll('.bar-fill');
+    const timeline = document.querySelector('.timeline');
     const skillsObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Animate progress bars
           bars.forEach(bar => {
             const width = bar.getAttribute('data-width');
             bar.style.width = width;
           });
+          // Animate timeline
+          if (timeline) {
+            timeline.classList.add('visible');
+          }
           observer.unobserve(entry.target);
         }
       });
